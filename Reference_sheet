@@ -1,0 +1,360 @@
+DNS
+
+Authortitative
+Any answer that originates from the DNS Server which has the complete zone file information available for the domain is said to be authoritative answer.
+
+non-Authortitative
+In many cases, DNS servers will not have the complete zone file information available for a given domain. Instead, it maintains a cache file which has the results of all queries performed in the past for which it has gotten authoritative response. When a DNS query is given, it searches the cache file, and return the information available as â€œNon-Authoritative Answerâ€.
+
+###checking the records from any specific DNS
+nslookup redhat.com ns1.redhat.com
+
+##if the port number got changed
+nslookup -port 56 redhat.com
+
+
+##Types of recrods inside DNS
+
+A record(Host address)
+A-records are the DNS server equivalent of the hosts file - a simple domain name to IP-address mapping.
+
+CNAME-Records (Canonical name for an alias)
+Canonical name records, or CNAME records, are often called alias records because they map an alias to the canonical name
+
+Reverse-lookup Pointer records (PTR Record)â€”allows a DNS resolver to provide an IP address and receive a hostname (reverse DNS lookup).
+
+IP Version 6 Address record (AAAA Record)
+â€”stores a hostname and its corresponding IPv6 address.
+
+MX
+The MX record, which stands for "mail exchange", is used to identify mail servers to which mail should be delivered for a domain.
+
+Start of Authority (SOA Record)â€”this record appears at the beginning of a DNS zone file, and indicates the Authoritative Name Server for the current DNS zone, contact details for the domain administrator, domain serial number, and information on how frequently DNS information for this zone should be refreshed.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+route
+Route command is used to show/manipulate the IP routing table. It is primarily used to setup static routes to specific host or networks via an interface.
+
+$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+
+
+#route add default gw 192.168.1.10
+$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+default         gateway.net     0.0.0.0         UG    0      0        0 eth0
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Disk related commands
+
+#fdisk -l 
+
+#df
+
+#lsblk
+Lists out all the storage blocks, which includes disk partitions and optical drives. Details include the total size of the partition/block and the mount point if any.
+Does not report the used/free disk space on the partitions.
+
+#hwinfo
+$ hwinfo --block --short
+disk:                                                           
+  /dev/sda             ST3500418AS
+  /dev/sdb             Sony Storage Media
+partition:
+  /dev/sda1            Partition
+  /dev/sda2            Partition
+  /dev/sda5            Partition
+  /dev/sda6            Partition
+  /dev/sda7            Partition
+  /dev/sda8            Partition
+  /dev/sdb1            Partition
+cdrom:
+  /dev/sr0             SONY DVD RW DRU-190A
+
+ #blkid
+ Prints the block device (partitions and storage media) attributes like uuid and file system type. Does not report the space on the partitions.
+
+/dev/sda1: UUID="5E38BE8B38BE6227" TYPE="ntfs" 
+/dev/sda5: UUID="4668484A68483B47" TYPE="ntfs" 
+/dev/sda6: UUID="6fa5a72a-ba26-4588-a103-74bb6b33a763" TYPE="ext4" 
+/dev/sda7: UUID="94443023-34a1-4428-8f65-2fb02e571dae" TYPE="swap" 
+/dev/sda8: UUID="13f35f59-f023-4d98-b06f-9dfaebefd6c1" TYPE="ext4" 
+/dev/sdb1: UUID="08D1-8024" TYPE="vfat"
+
+
+#fdisk command to check the partition
+[root@tecmint ~]# fdisk -s /dev/sda2
+5194304
+
+
+ cat /proc/partitions
+Another rudimentary way is to print out the contents of the /proc/partitions/ folder. This will print out all known devices and partitions in the system. By this time you should be able to differentiate between the disk and partitions, i assume.
+anand@multipurpose:~$ cat /proc/partitions
+major minor  #blocks  name
+
+  11        0    1048575 sr0
+   8        0   52984544 sda
+   8        1   46119936 sda1
+   8        2          1 sda2
+   8        5    6861824 sda5
+
+####Difference between ext4/xfs
+
+XFS uses B+ tree arch where as ext4 uses Hashed B-tree
+
+Max vol size
+xfs - 8Ebytes
+ext4 - 1Ebytes
+
+number of files ext4--4 billion
+xfs :- 2 power 64
+
+
+The XFS file system is an extension of the extent file system .XFS is a high performance 64 bit journaling file system 
+
+XFS has a number of unique features that make it stand out among the file system crowd, such as scalable/parallel I/O, journaling for metadata operations, online defragmentation, suspend/resume I/O, delayed allocation for performance, etc.
+
+Best for extremely large file systems, large files, and lots of files
+ Journaled (an asymmetric parallel cluster file system version is also available)
+POSIX extended access controls
+
+
+###xfs commands
+mkfs.xfs :: to create xfs
+xfs_repair : file system check
+xfs_growfs::- Resizeing a file system
+xfsdump and xfsrestore :-
+
+
+###commands for ext4
+mkfs.ext4 :: to create file system check
+e2fsck :: 
+resize2fs :: resize a file system
+dump and restore :: Dump and restore
+tune2fs  :: tune a file sytems
+
+
+
+
+what is journelling 
+A journaling file system is a file system that keeps track of changes not yet committed to the file system's main part by recording the intentions of such changes in a data structure known as a "journal", which is usually a circular log. In the event of a system crash or power failure, such file systems can be brought back online more quickly with a lower likelihood of becoming corrupted
+
+LVM commands
+
+#create a physical volumne
+pvcreate /dev/sdax
+pvcreate /dev/sday
+
+#create vgcolument
+vgcreate vg0 /dev/sdax /sday
+vgdisplay
+
+#Create LVM
+lvcreate -n lvm0 -L 150M vg0
+lvdisplay
+
+#Extenet LVM to total of 300M
+lvextend  -L 300M /dev/vg0/lvm0
+or
+lvextent -L +150M /dev/vg0/lvm0
+
+xfs_growfs /dev/vg0/lvm0
+
+
+#TO exetent vg
+vgextend vg0 /dev/sdax
+vgdisplay
+
+
+
+
+##Mount in fstab
+defuault permission in 
+defaults:- Uses the default options that are rw, suid, dev, exec, auto, nouser, and async
+
+Last two options
+The next option is a binary value (â€œ0â€ for false and â€œ1â€ for true) for â€œdumping.â€
+
+Backup operation â€“ the fifth field contains a 1 if the dump utility should back up a partition or a 0 if it shouldnâ€™t. If you never use the dump backup program, you can ignore this option.
+
+File system check order â€“ the sixth field specifies the order in which fsck checks the device/partition for errors at boot time. A 0 means that fsck should not check a file system. Higher numbers represent the check order. The root partition should have a value of 1 , and all others that need to be checked should have a value of 2.  
+
+
+
+RAID
+
+RAID1
+Mirror has Good Performance.
+50% of space will be lost. Means if we have two disk with 500GB size total, it will be 1TB but in Mirroring it will only show us 500GB.
+No data loss in Mirroring if one disk fails, because we have the same content in both disks.
+Reading will be good than writing data to drive.
+
+Hex code is fd
+
+using mdadm commands
+
+
+RAID0
+Data is striped (or split) evenly across all disks in the RAID 0 setup.
+In theory RAID 0 offers faster read and write speeds compared with RAID 1.
+usecase:Where data reliability is less of a concern and speed is important
+minimun no of disk required :2
+Disadvantages: No redundancy or fault tolerance. If one drive in the RAID fails, all data is lost.
+
+----------------------------------------------------------------------------------------------------------------------
+
+process
+
+hightest cpu consuming process
+ps aux k-pcpu | head -n 3
+ps -Ao user,uid,comm,pid,pcpu,tty --sort=-pcpu | head -n 6
+
+
+##How long the process is running
+ps -p 4273 -o etime
+  ELAPSED
+13-12:30:53
+Notes:etime - elapsed time since the process was started, in the form [[dd-]hh:]mm:ss.
+it means 13 days 12 hours and 30 minutes
+
+
+
+
+##Get the start time of process
+anand@multipurpose:~$ ps -p 4273 -o lstart
+                 STARTED
+Sat Apr 27 00:21:47 2019
+
+ps -eo pid,lstart,etime,args
+
+
+Different process states.
+New:- the process is being created
+Ready: the process is waiting to be asssinged to processor
+Running : - instructing being executed
+Waiting : The process is waiting  for some  event to occur(such as I/O completion or reception)
+
+
+Explaining top command
+##This first line indicates in order:
+current time (11:37:19)
+uptime of the machine (up 1 day, 1:25)
+users sessions logged in (3 users)
+average load on the system (load average: 0.02, 0.12, 0.07) the 3 values refer to the last minute, five minutes and 15 minutes.
+
+##
+The second row gives the following information:
+
+Processes running in totals (73 total)
+Processes running (2 running)
+Processes sleeping (71 sleeping)
+Processes stopped (0 stopped)
+Processes waiting to be stoppati from the parent process (0 zombie)
+
+
+## THird row
+The third line indicates how the cpu is used. If you sum up all the percentages the total will be 100% of the cpu. Letâ€™s see what these values indicate in order:
+
+Percentage of the CPU for user processes (0.3%us)
+Percentage of the CPU for system processes (0.0%sy)
+Percentage of the CPU processes with priority upgrade nice (0.0%ni)
+Percentage of the CPU not used (99,4%id)
+Percentage of the CPU processes waiting for I/O operations(0.0%wa)
+Percentage of the CPU serving hardware interrupts (0.3% hi â€” Hardware IRQ
+Percentage of the CPU serving software interrupts (0.0% si â€” Software Interrupts
+The amount of CPU â€˜stolenâ€™ from this virtual machine by the hypervisor for other tasks (such as running another virtual machine) this will be 0 on desktop and server without Virtual machine. (0.0%st â€” Steal Time)
+
+
+And as last thing ordered by CPU usage (as default) there are the processes currently in use. Letâ€™s see what information we can get in the different columns:
+
+PID â€“ lâ€™ID of the process(4522)
+USER â€“ The user that is the owner of the process (root)
+PR â€“ priority of the process (15)
+NI â€“ The â€œNICEâ€ value of the process (0)
+VIRT â€“ virtual memory used by the process (132m)
+RES â€“ physical memory used from the process (14m)
+SHR â€“ shared memory of the process (3204)
+S â€“ indicates the status of the process: S=sleep R=running Z=zombie (S)
+%CPU â€“ This is the percentage of CPU used by this process (0.3)
+%MEM â€“ This is the percentage of RAM used by the process (0.7)
+TIME+ â€“This is the total time of activity of this process (0:17.75)
+COMMAND â€“ And this is the name of the process (bb_monitor.pl)
+
+###Difference between thread and process
+
+Process: 
+
+Process is a heavy weight process.
+Process is a separate program that has separate memory,data,resources ect.
+Process are created using fork() method.
+Context switch between the process is time consuming. 
+Example: 
+Say, opening any browser (mozilla, Chrome, IE). At this point new process will start to execute.
+
+Threads:
+
+Threads are light weight processes.Threads are bundled inside the process.
+Threads have a shared memory,data,resources,files etc.
+Threads are created using clone() method.
+Context switch between the threads are not much time consuming as Process.
+Example: 
+Opening multiple tabs in the browse
+
+
+
+##Difference between process and daemon
+Daemon runs in the background and not interactive , They have no controlling terminal
+process is running program.
+
+
+-----------------------------------------------------------------------------------------
+SWAP 
+create 
+dd if=/dev/zero of=/swapfile bs=1024 count=104857
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+/swapfile swap swap defaults 0 0
+
+
+---------------------------------------------------------------------------------------------------------------
+yum and rpms commands
+--------------------
+yum list available
+yum list installed
+yum list kernel
+yum deplist nfs-utils 
+yum history list
+yum history info
+yum history redo
+
+rpm -ich
+rpm -Uvh
+rpm -ev--remove
+rpm -qa-- list of installed packages
+rpm -qi--show information
+rpm -qf show the package name from the file name
+rpm -qpR-- show deps of the packages
+rpm -ql BitTorrent :- installed files
+
+
+Rsync
+##sync a file tp local computer
+rsync -zvh test.txt /home/test1/
+
+##Sync to remote system
+rsync -avzh public_html/ root@10.11.12.13:/home/
+
+##Rsync with ssh with different port.
+rsync -avzh startup.php -e 'ssh -p 73' root@0:0:0:0/home/
+
+##Dry run
+rsync --dry-run --remove-source-files -zvh backup.tar /home/pu
