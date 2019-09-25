@@ -1,0 +1,2 @@
+##Check the disk space get the most consuming file on the top 
+ls -ltR /var | sort +4 -5nr   | head  | awk '{print  $(5)" "$NF}'
