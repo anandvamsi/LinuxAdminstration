@@ -1,2 +1,6 @@
 ##Check the disk space get the most consuming file on the top 
 ls -ltR /var | sort +4 -5nr   | head  | awk '{print  $(5)" "$NF}'
+
+#command to push traffic and increase memory and cpu
+ab -n 1000000 -c 200 http://localhost/index.html
+Note: =- abs will be part of the httpd package
