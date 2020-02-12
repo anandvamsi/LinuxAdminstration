@@ -1,0 +1,13 @@
+
+How i connected a VM to internet
+
+Method1 
+This should be straight forward to connect choosing the Adaptor "Bridged method"
+This will join the VM to the guest network will have the same IP range of the HOST OS IP
+
+Method
+Need to create 2 Adaptor
+		1. NAT Adaptor
+		2. VM host only adaptor
+THis will create 2 interfaces with one with IP 10.* and other with 192.168.56.* series
+
