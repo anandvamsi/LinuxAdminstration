@@ -1,0 +1,10 @@
+Jq 
+
+Jq sort by Field "Account"
+ jq '.' test.json |  jq -s -C 'sort_by(.Account)
+
+ Getting required fields from json 
+ jq . test.json  | jq '{VolumeId: (.VolumeId),Size: (.Size),Account: (.Account)}'
+
+Grepping specific fields
+ jq '. | select(.Account=="hv-arg-dev")' test.json
