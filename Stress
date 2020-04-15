@@ -1,0 +1,6 @@
+To virtually increase the CPU and Memory 
+
+#yum install stress
+
+#To spike the CPU
+stress -c 4
