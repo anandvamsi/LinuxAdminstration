@@ -4,3 +4,7 @@ To virtually increase the CPU and Memory
 
 #To spike the CPU
 stress -c 4
+
+#To Spike the CPU
+stress-ng --vm 2 --vm-bytes 1G --timeout 60s
+Note:: Install stres-ng package
