@@ -11,3 +11,6 @@ Note:: Install stres-ng package
 
 Stress using IO bound task
 #stress -i 2
+
+#Combination of all commands
+stress --cpu 4 --io 3 --vm 2 --vm-bytes 256M --timeout 200s
