@@ -8,3 +8,6 @@ stress -c 4
 #To Spike the CPU
 stress-ng --vm 2 --vm-bytes 1G --timeout 60s
 Note:: Install stres-ng package
+
+Stress using IO bound task
+#stress -i 2
