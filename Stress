@@ -1,7 +1,12 @@
 To virtually increase the CPU and Memory 
 
-#yum install stress
+Amazon2Linux default dont have repo to install stress you need enable epel first
 
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum-config-manager --enable epel
+
+
+#yum install stress
 #To spike the CPU
 stress -c 4
 
