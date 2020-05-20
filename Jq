@@ -10,4 +10,4 @@ Grepping specific fields
  jq '. | select(.Account=="hv-arg-dev")' test.json
  
  searching the data from aws tags
- aws ec2 describe-tags --region us-west-2 --filter "resource-type=instance" --filter "Name=tag:key,Values=Resource_Owner, Name=resource-id,Values=$(ec2-metadata -i | cut -d ' ' -f2)"  | jq -r '.Tags[] | select(.Key == "Resource_Owner")' | jq .Value
+ aws ec2 describe-tags --region us-west-2 --filter "resource-type=instance" --filter "Name=tag:key,Values=Resource_Owner, Name=resource-id,Values=$(ec2-metadata -i | cut -d ' ' -f2)"  | jq -r '.Tags[] | select(.Key == "Resource_Owner")' | jq -r ."Value"
