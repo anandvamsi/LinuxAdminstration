@@ -1,0 +1,42 @@
+Installing and Configuring proftp
+
+#Install
+yum install proftpd.x86_64
+
+#Configure
+vim /etc/proftpd.conf
+-->
+#Enable passive ports
+ServerName                      "<Ip address of server>"
+PassivePorts                  49152 65534
+
+Note :: 
+Open the ports 49152 65534 in EC2 SG and port no 22 too
+
+
+#start the service
+systemctl enable  proftpd.service
+systemctl start  proftpd.service
+
+#Creating the user and set password for same
+useradd proftpd
+ passed proftpd
+ 
+ #Login to ftp
+ >ftp localhost
+ 
+ 
+ ##You can use below commands in shell scripts
+ method 1
+ wget --user=proftpd --password=XXXXX  ftp://10.80.XX.32/cb-psc-XXXX-rhel-2.7.1.XX.tar
+ 
+ metheod2
+#/bin/bash
+echo "
+ verbose
+ open 10.80.224.32
+ user proftpd XXXXX
+ ascii
+ get cb-psc-XXXX-rhel-2.7.1.XX.tar
+ bye
+" | /bin/ftp -n > ftp_$$.log
