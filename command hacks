@@ -1,3 +1,6 @@
+#Command to check more CPU consuming process
+ ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
+
 ##Check the disk space get the most consuming file on the top 
 ls -ltR /var | sort +4 -5nr   | head  | awk '{print  $(5)" "$NF}'
 
