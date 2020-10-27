@@ -1,0 +1,7 @@
+way to know the records in an domain.
+
+method 1: - via command line
+dig XXXXXX.com ANY +noall +answer
+
+Method 2:- Via webconsole.
+dnsdumper.com
