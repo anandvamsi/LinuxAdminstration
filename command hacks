@@ -7,3 +7,9 @@ ls -ltR /var | sort +4 -5nr   | head  | awk '{print  $(5)" "$NF}'
 #command to push traffic and increase memory and cpu
 ab -n 1000000 -c 200 http://localhost/index.html
 Note: =- abs will be part of the httpd package
+
+
+#To Display the error and warning  messages
+dmesg  --level=err,warn
+[    0.004000] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+[    0.180033] cpu 0 spinlock event irq 53
