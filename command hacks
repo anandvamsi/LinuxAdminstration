@@ -13,3 +13,7 @@ Note: =- abs will be part of the httpd package
 dmesg  --level=err,warn
 [    0.004000] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
 [    0.180033] cpu 0 spinlock event irq 53
+
+
+#Systemcl command to get the list of daemons runnings
+systemctl list-units --type=service
