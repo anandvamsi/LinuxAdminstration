@@ -1,0 +1,24 @@
+tee commmand
+--------------
+
+tee command used to save output of the command to a file by piping the out of command which is alternative option to > and >>
+example
+
+1.
+command | tee <outputfile>
+df -h |tee /var/log/testlogs
+
+2. we can even append the logs files
+df -h | tee /var/log/testlogs
+uptime | tee -a /var/log/testlogs
+
+3. we can use sudo privilages  with tee command
+ uptime | sudo tee /etc/testing 
+
+4. suppress the output of the command
+ uptime | sudo tee /etc/testing > /dev/null
+ 
+ 5.with date variable dynamic
+ echo "hello" | tee logfile_$(date '+%Y-%m-%d-%H').txt
+ 
+ 
