@@ -17,3 +17,10 @@ dmesg  --level=err,warn
 
 #Systemcl command to get the list of daemons runnings
 systemctl list-units --type=service
+
+
+
+Top command utility
+top
+  - Shift + m ---> sort by memory
+  - shift + p ---> sort by CPU
