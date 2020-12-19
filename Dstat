@@ -1,0 +1,51 @@
+
+
+/home/anand# dstat  --time -c --top-cpu -dn --top-mem
+/usr/bin/dstat:2619: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Module dstat_disk24_old failed to load. (No suitable block devices found to monitor)
+----system---- --total-cpu-usage-- -most-expensive- -net/total- --most-expensive-
+     time     |usr sys idl wai stl|  cpu process   | recv  send|  memory process
+19-12 22:41:26|  5   5  90   0   0|init         0.0|   0     0 |bash        3624k
+19-12 22:41:27|  2   4  95   0   0|                |   0     0 |bash        3624k
+19-12 22:41:28|  1   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:29|  2   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:30|  3   2  96   0   0|                |   0     0 |bash        3624k
+
+
+
+###Advance Memory 
+/home/anand# dstat --mem-adv
+-------------advanced-memory-usage-------------
+total  used  free  buff  cach dirty shmem  recl
+31.9G 10.0G 21.7G 33.2M  184M    0  17.3M 6744k
+31.9G 10.0G 21.7G 33.2M  184M    0  17.3M 6744k
+31.9G 10.0G 21.7G 33.2M  184M    0  17.3M 6744k
+31.9G 10.0G 21.7G 33.2M  184M    0  17.3M 6744k
+31.9G 10.0G 21.6G 33.2M  184M    0  17.3M 6744k
+
+
+/home/anand# dstat  --time -c --top-cpu -dn --top-mem
+/usr/bin/dstat:2619: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Module dstat_disk24_old failed to load. (No suitable block devices found to monitor)
+----system---- --total-cpu-usage-- -most-expensive- -net/total- --most-expensive-
+     time     |usr sys idl wai stl|  cpu process   | recv  send|  memory process
+19-12 22:41:26|  5   5  90   0   0|init         0.0|   0     0 |bash        3624k
+19-12 22:41:27|  2   4  95   0   0|                |   0     0 |bash        3624k
+19-12 22:41:28|  1   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:29|  2   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:30|  3   2  96   0   0|                |   0     0 |bash        3624k
+
+
+/home/anand# dstat  --time -c --top-cpu -dn --top-mem
+/usr/bin/dstat:2619: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Module dstat_disk24_old failed to load. (No suitable block devices found to monitor)
+----system---- --total-cpu-usage-- -most-expensive- -net/total- --most-expensive-
+     time     |usr sys idl wai stl|  cpu process   | recv  send|  memory process
+19-12 22:41:26|  5   5  90   0   0|init         0.0|   0     0 |bash        3624k
+19-12 22:41:27|  2   4  95   0   0|                |   0     0 |bash        3624k
+19-12 22:41:28|  1   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:29|  2   3  96   0   0|                |   0     0 |bash        3624k
+19-12 22:41:30|  3   2  96   0   0|                |   0     0 |bash        3624k
