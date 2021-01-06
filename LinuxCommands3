@@ -1,0 +1,61 @@
+Day 3:
+
+Commands:
+comm,grep,tar,zip,history,locate
+find
+
+
+
+comm command:-
+Before executing comm command,make sure file is sorted
+
+ - comm -23  file1 file2 un common strings in file1 when compared to file2
+ - comm -13  file1 file2 un common strings in file2 when compared to file1
+ - comm -12  file2 file3(common stings)
+
+gzip
+compression
+- gzip filename
+To retain the orginal file
+gzip -k filename
+
+These command will show the contents inside the compressed file. 
+zcat passwd
+zless passwd
+
+tar-
+	tar command :- Archive 
+	tar -cvf data.tar *
+	tar -tvf data.tar
+	tar -xvf data.tar
+
+gz compression
+ compressing the tar file
+ - #syntax tar -cvzf file_name.tar.gz  orginal_file
+ - #syntax to decompress tar -xvzf file_name.tar.gz
+
+ To exclude the any file or directory
+	    tar -cvzf filenmae.tar * --exlude=file*
+
+
+Zip
+zip <filename.zip> <file1> <file2>
+unzip <filenmae.zip>
+zipinfo data.zip :- will show files inside the zip.
+
+
+grep
+ 		  grep -w "exact_pattern" <filname>
+    	  grep -c "count" <filename>
+    	  grep -l "list of strings" <files>
+    	  grep -l "sting" <filenam>
+
+    	- grep -E 'patter1|pattern2' <filename/string>
+   		- Egrep 'pattern1|pattern1' <filename/string>
+        - pgrep  'process'  exmaple pgrep 'mysql'
+
+     locate and history command
+     	locate passwd
+
+
+
