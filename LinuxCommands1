@@ -1,0 +1,40 @@
+Linux Basic commands
+
+command syntax linux
+
+
+Basic command 
+>List the files and directories
+ls 
+ option
+  -l => Long listing
+  -d => directories
+      - ls -d */
+  -t => modifed time first
+  -r => resverse
+  -h => size in human readable
+  -1 => one file per line
+  -R => recursive files in the folder
+
+
+ Wildcards in commands
+  - ls anand*
+  - ls [1-4][1-3]apples 
+  - ls files.*
+
+
+  cd
+	>change direcotry
+		- cd <path> 
+		- cd  ~ will route to your home directory
+		- cd  - will route to your previous path
+
+-Copy a directory
+ cp -r <source_dir> <destination_dir>
+ 
+ option
+    -v verbose
+    -p preserve the time stamp and
+
+  move the file or direcory
+    mv <source_file> <destination_file>
