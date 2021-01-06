@@ -1,0 +1,78 @@
+Day 2
+
+1. Command line shortcuts
+2. Remove,touch,date,echo,cat,head,tail,less
+3. sort,tar,
+
+ Remove
+ #rm <filename>
+ #rm -rf <fir>
+ #rm -rf or rmdir
+
+
+ Head:-
+    - head will list top 10 lines of file
+    - head <file_name>
+    - head -10 file
+
+tail:-
+     - will display last 10 lines of the file
+     - usually use for log monitoring
+     - tail -f log-file
+     - tail -n 100 log-file
+
+
+less command:
+     - less /etc/passwd
+     - less -N /etc/passwd
+   with line numbers
+
+date:-
+   date '+%Y_%m_%d'
+  To check the date after n days
+   [root@localhost ~]# date -d "+140 days"
+    Tue Aug 23 11:24:38 CST 2016
+    [root@localhost ~]#
+
+	 anand@ubuntu:~$ date -d "-140 days"
+	Tue Aug 18 17:19:21 PDT 2020
+
+
+   converting the date format
+   Change the date format
+	date -d'27 JUN 2011' +%Y%m%d
+	date -d "27 JUN 2011" +%F
+
+file:-
+	Denotes what kind of flies
+    file /etc/passwd
+	/etc/passwd: ASCII text
+
+diff
+	compare two files
+	diff file1 file2
+	diff -by --suppress-common-line file1 fil2
+
+
+sort 
+	sort names :- from A-Z
+	sort -r names :- from Z-a
+	sort -u names
+
+sorting numbers
+	sort -n numbers
+	sort -nr numbers
+
+RAW data
+	ram 10
+	arun 100
+	don 89
+	vamsi 76
+	shashi 90
+	venu 67
+sort -n -k2 names
+sort -t"|" -n -k2 names
+
+uniq
+	uniq filename will show the data in uniq fashion
+	uniq -d filename ::- will show the duplicates
