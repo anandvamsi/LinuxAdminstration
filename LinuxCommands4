@@ -1,0 +1,112 @@
+
+Disk utilization commands
+cpu and main memory 
+Networking commands.
+Process related commands
+User Administration
+Package installation:- java,python.
+Apache installation
+vim editor
+
+
+Disk utilization commands
+ - df -h  For disk space
+ Understand freespace,diskspace,partitions,mount points
+ - du -sh  filename for the identifing the filename
+
+
+To know the total RAM consumed total memory
+ free -m
+
+- top commands:- short cuts
+shift+m => to sort by the memory
+
+-  process commands
+ ps -aux  To show all the running process
+ ps -aux | grep <processname>
+
+-process grep
+pgrep sshd
+911
+1056
+1075
+
+
+- Terminting the process
+ kill <PID>
+ kill -9 <PID>
+
+
+ - watch command with CPU
+ watch -n 1 "ps aux | sort -rk 3,3  | head -n 4"
+
+
+
+
+Networking related commands
+
+ifconfig
+will show the IP address of all ethernet interfaces
+
+ifconfig -a will show the 
+
+hostname will show the name of server
+mii-tool will show ethernet interfaces status
+
+files associated with networks
+
+/etc/hosts
+/etc/resolv.conf
+/etc/network/interfaces
+
+
+
+
+
+
+
+checking connectivity b/w nodes
+anand@ubuntu:~$ ping 127.0.0.1
+- c :- denotes the count
+#ping -c2 <IP address>
+
+telnet :- check the connectivty in port
+telnet <ipaddress> port
+
+netstat -ntlp : Listing all the opened tcp ports
+netstat -ntulp :- listing all the UDP and TCP ports.
+
+
+To check the connecvity b/w hosts which show the connect 
+mtr 8.8.8.8
+
+
+
+
+
+ Understanding VIM editor
+ -------------------------
+ Despite there are many editor like nano,vi,vim,emacs..vim is better
+
+vim filename
+
+press I to insert to data
+esp- :wq quite and quit
+
+:wq! write and quit forcefully
+:nu Enable the numbers
+:1 :- will go to linenumber
+
+
+- dd to cut thelines
+- 3dd to cut 3 lines
+- yy to past the lines
+- dG :- delete end of file
+- dgg :- delete to begining of file.
+
+/search :- search of word
+%s/<txt to search>/<txt to replace>/g
+%v/./d :- To remove  the empty lines
+
+
+
