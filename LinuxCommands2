@@ -33,6 +33,12 @@ date:-
    [root@localhost ~]# date -d "+140 days"
     Tue Aug 23 11:24:38 CST 2016
     [root@localhost ~]#
+    
+cat -
+	cat filename
+	cat -n filename
+	Combine all files to a single file
+	cat fil[1-4] > final_file
 
 	 anand@ubuntu:~$ date -d "-140 days"
 	Tue Aug 18 17:19:21 PDT 2020
