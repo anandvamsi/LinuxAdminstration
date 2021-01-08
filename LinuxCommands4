@@ -3,10 +3,13 @@ Disk utilization commands
 cpu and main memory 
 Networking commands.
 Process related commands
+vim editor
+
 User Administration
 Package installation:- java,python.
 Apache installation
-vim editor
+
+
 
 
 Disk utilization commands
@@ -20,6 +23,7 @@ To know the total RAM consumed total memory
 
 - top commands:- short cuts
 shift+m => to sort by the memory
+shift+p => to sort by the cpu
 
 -  process commands
  ps -aux  To show all the running process
@@ -110,3 +114,105 @@ esp- :wq quite and quit
 
 
 
+
+
+User administration Commands
+#Adding a user
+useradd -m <username>
+
+contents of :-
+/etc/passwd
+{username,password,uid,gid,shell}
+/etc/shadow
+
+setting password
+passwd <username>
+
+Groups
+Every user will have one primary groups and secoundry groups.
+id <username> will get you all the groups
+
+
+Enabling sudo user
+usermod -aG sudo rajesh
+
+
+
+ssh (secure shell)
+---------------------
+port : 22
+conf directory :/etc/ssh/sshd_config
+logfile :- /var/log/auth.log
+
+syntax to login to server
+#ssh <username>@<ip/hostname>
+
+To copy the file 
+#scp <src_location> <user>@<ip/hostnamn>:<location with permission to user>
+
+
+
+
+
+#Creating a ssh key
+ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/rajesh/.ssh/id_rsa):
+Created directory '/home/rajesh/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/rajesh/.ssh/id_rsa.
+Your public key has been saved in /home/rajesh/.ssh/id_rsa.pub.
+The key fingerprint is:
+cd:43:54:58:86:92:7d:38:81:fb:28:5d:f0:aa:44:79 rajesh@ubuntu
+The key's randomart image is:
++--[ RSA 2048]----+
+|         +oB+    |
+|        =.*..    |
+|       . =.o     |
+|      o E+o      |
+|     . oS=+      |
+|      o + ..     |
+|     . o         |
+|      .          |
+|                 |
++-----------------+
+
+public key and secret key
+/.ssh$ ls
+id_rsa  id_rsa.pub
+cat id_rsa.pub > authorized_keys
+
+
+#Installing the package
+apt-get install apache2
+
+
+systemctl status apache2
+start
+restart
+stop
+
+systemctl enable apache2
+
+remove the packate package
+apt-get remove apache2
+
+Log file direcotry
+/var/log/apache2/access.log
+
+config file directory
+/etc/apache2
+
+
+java instllation
+
+#apt-get install openjdk-7-jdk
+
+#which java
+/usr/bin/java
+
+#java version "1.7.0_201"
+OpenJDK Runtime Environment (IcedTea 2.6.17) (7u211-2.6.17-0ubuntu0.1)
+OpenJDK 64-Bit Server VM (build 24.201-b00, mixed mode)
+root@ubuntu:/etc/apache2#
