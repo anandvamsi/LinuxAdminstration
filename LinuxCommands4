@@ -216,3 +216,54 @@ java instllation
 OpenJDK Runtime Environment (IcedTea 2.6.17) (7u211-2.6.17-0ubuntu0.1)
 OpenJDK 64-Bit Server VM (build 24.201-b00, mixed mode)
 root@ubuntu:/etc/apache2#
+
+
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash -x Miniconda3-latest-Linux-x86_64.sh
+
+
+#Creating new env
+(base) root@ubuntu:~/miniconda3/bin# conda create --name myenv
+WARNING: A conda environment already exists at '/home/anand/miniconda3/envs/myenv'
+Remove existing environment (y/[n])? y
+
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/anand/miniconda3/envs/myenv
+
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate myenv
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+Note: Create a new env with version or package
+conda create -n myenv python=3.6
+conda create -n myenv scipy=0.15.0
+
+#Activating to new env
+conda activate myenv
+
+
+##Installing a package
+conda install mysql-connector-python
+
+import mysql.connector
+
+#To deactivate
+conda deactivate
