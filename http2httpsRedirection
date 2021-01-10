@@ -1,0 +1,14 @@
+
+#Below configration will redirect the website from 80 to 443 
+Note: Make sure both are same file
+<VirtualHost *:80>
+ServerName www.yourdomain.com
+Redirect permanent / https://www.yourdomain.com/
+</VirtualHost>
+
+<VirtualHost _default_:443>
+ServerName www.yourdomain.com
+DocumentRoot /usr/local/apache2/htdocs
+SSLEngine On
+...
+</VirtualHost>
