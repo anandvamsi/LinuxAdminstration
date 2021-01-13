@@ -1,0 +1,7 @@
+Two files associated with TCP wrappers is hosts.deny and hosts.allow files
+Tcp wrappers will read the hosts.allow file first ,if the rules is not found it wil go with deny file.
+
+Our requirement is  Deny all ,add only the required rules now and too to specified requirement.
+
+hosts.deny :- ALL: ALL
+hosts.allow  sshd: 10.  ---> will allow all the ipaddress starting with 10.
