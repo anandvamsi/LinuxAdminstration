@@ -1,0 +1,11 @@
+Most situration you find only allow certain rules at the begning of the project and add the rules as per the requirement.
+Preferred start adding with ssh
+
+FirtRule//should be alway 22
+iptables -A INPUT -p tcp -s 10.0.0.0/8 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+#Deny all the ports
+iptables -P INPUT DROP 
+
+#Prepend future rules use -I
+iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
