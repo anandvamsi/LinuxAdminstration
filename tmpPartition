@@ -1,0 +1,12 @@
+
+Red Hat Enterprise Linux 7 offers the ability to use /tmp as a mount point for a temporary file storage system (tmpfs), but unfortunately, it is not enabled by default.
+
+When enabled, this temporary storage appears as a mounted file system, but stores its content in volatile memory instead of on a persistent storage device. And when using this, no files in /tmp are stored on the hard drive except when memory is low, 
+in which case swap space is used. This also means that the contents of /tmp are not persisted across a reboot.
+
+systemctl enable tmp.mount
+# systemctl start tmp.mount
+
+RHEL uses a default size of half the memory size for the in-memory /tmp file system
+
+df -h /tmp
