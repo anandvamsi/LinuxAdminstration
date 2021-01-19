@@ -25,6 +25,9 @@ To know the total RAM consumed total memory
 shift+m => to sort by the memory
 shift+p => to sort by the cpu
 
+top command to list only one process
+top -H -p 933
+
 -  process commands
  ps -aux  To show all the running process
  ps -aux | grep <processname>
@@ -44,6 +47,8 @@ pgrep sshd
  - watch command with CPU
  watch -n 1 "ps aux | sort -rk 3,3  | head -n 4"
 
+process commands to check the threads
+ps -T -p <PID>
 
 
 
