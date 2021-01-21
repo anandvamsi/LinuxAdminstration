@@ -19,3 +19,8 @@ iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 80 -m conntrack --ctstate NEW,EST
 For example to insert a new rule to the top of the chain, use the following command with index number 1.
 
 iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+
+
+##Deleting the rules
+If you wish to remove an existing rule from a certain chain, use the delete command with the parameter -D. T
+iptables -D INPUT 2
