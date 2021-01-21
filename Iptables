@@ -4,6 +4,8 @@ make sure you have package be iptables part of the security posture
 yum install iptables iptables-services
 
 
+Disable the firewalld in centos7,else it wont start the iptables in startup.
+
 
 FirtRule//should be alway 22
 iptables -A INPUT -p tcp -s 10.0.0.0/8 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
@@ -24,3 +26,11 @@ iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
 ##Deleting the rules
 If you wish to remove an existing rule from a certain chain, use the delete command with the parameter -D. T
 iptables -D INPUT 2
+
+
+Notes:-
+After every iptables command execution execute service iptables save so it will write to /etc/sysconfig/iptables
+
+To become iptables persistatn
+"/etc/sysconfig/iptables-config"
+IPTABLES_SAVE_ON_RESTART="yes"
