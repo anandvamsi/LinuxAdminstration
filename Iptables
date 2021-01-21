@@ -1,5 +1,9 @@
 Most situration you find only allow certain rules at the begning of the project and add the rules as per the requirement.
 Preferred start adding with ssh
+make sure you have package be iptables part of the security posture
+yum install iptables iptables-services
+
+
 
 FirtRule//should be alway 22
 iptables -A INPUT -p tcp -s 10.0.0.0/8 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
@@ -9,3 +13,9 @@ iptables -P INPUT DROP
 
 #Prepend future rules use -I
 iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+
+#The number at the beginning of each rule line indicates the position in the chain. To insert a new rule above a specific existing rule, simply use the index number of that existing rule. 
+For example to insert a new rule to the top of the chain, use the following command with index number 1.
+
+iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
