@@ -1,0 +1,12 @@
+
+Add the below line to fstab
+
+#cat /etc/fstab  | grep tmp
+tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
+
+#sudo systemctl unmask tmp.mount
+#sudo systemctl enable tmp.mount
+ 
+#mount -a
+
+df -h | grep tmp
