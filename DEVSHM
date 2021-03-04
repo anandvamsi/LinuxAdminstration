@@ -1,0 +1,8 @@
+/dev/shm is nothing but implementation of traditional shared memory concept.
+It is an efficient means of passing data between programs. One program will create a memory portion, which other processes (if permitted) can access.
+This will result into speeding up things on Linux.
+
+shm / shmfs is also known as tmpfs, which is a common name for a temporary file storage facility on many Unix-like operating systems. 
+It is intended to appear as a mounted file system, but one which uses virtual memory instead of a persistent storage device.
+
+ 
