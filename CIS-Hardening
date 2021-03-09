@@ -1,0 +1,13 @@
+#Add noexec partition to /dev/shm
+
+Add below to fstab
+tmpfs /dev/shm tmpfs defaults,nodev,nosuid,noexec 0 0
+>>remount the shm
+umnount /dev/shm
+mount -a
+
+#Create seperate partition for /tmp
+tmpfs /dev/shm tmpfs defaults,nodev,nosuid,noexec 0 0
+sudo systemctl unmask tmp.mount
+sudo systemctl enable tmp.mount
+ 
