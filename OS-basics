@@ -1,0 +1,76 @@
+
+#Day 1
+
+Topics
+
+In terms of usability:: Operating system types
+what is Unix  
+Layers of Operating systems
+Linux and its varients
+
+
+
+##In terms of usability:: Operating system types
+
+- Servers are design to run 24/7/365 vs desktops are design to run as per the needs
+- Files are saved in multi location vs files are saved locally
+- Incorporates mirrored hard disk, data can recovered from any drive  vs single hard disk failure.
+- Servers support plugging more memory(256GB), CPUs and disks than ordinary computers.
+- Servers don’t need graphics or sound and usually don’t have it. On the other hand, graphics and sound is very important for PCs and laptops
+
+Examples:
+servers
+
+Windows 2016
+Windows 2012
+Red Hat Linux Operating System 
+ubuntu
+
+Desktops
+windows 8,windows 10, Fedora OS, ubuntu deskstop
+
+
+
+##Unix
+Unix 
+Unix was originally developed in 1969 by a group of AT&T employees Ken Thompson, Dennis Ritchie, 
+Unix variants available in the market. Solaris Unix, AIX, HP Unix and BSD are a few examples. 
+
+
+Layers of OS
+------------
+
+Layer-1 Hardware
+Layer-2 Kernel
+Layer-3 Shell commands
+Layer-4 Application Layer
+
+
+
+#kernel
+Heart of the operating system. 
+It interacts with the hardware and most of the tasks like memory management, task scheduling and file management.
+
+
+#shell and Commands and Utilities
+communication to Kernel
+The shell is a command line interpreter; 
+it translates commands entered by the user and converts them into a language that is understood by the kernel
+
+
+#Files and directories
+
+
+Linux
+- Operating system
+- is a family of open-source Unix-like operating systems based on the Linux kernel
+
+
+Linux OS usecases:
+- Smartphones
+- severs,supercomputers,mainframes
+- Routers
+- Desktops
+
+
+Worlds top supercomputer uses linux
