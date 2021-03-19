@@ -1,0 +1,11 @@
+systemctl and journalctl 
+--------------------------
+
+#To list all the units
+systemctl list-unit-files --all
+
+#TO list the data in json data
+journalctl -u sshd --output=json-pretty  | head -n 30
+
+#To list the logs of a daemon using jounaltcl
+journalctl -u sshd
