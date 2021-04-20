@@ -11,3 +11,10 @@ tmpfs /dev/shm tmpfs defaults,nodev,nosuid,noexec 0 0
 sudo systemctl unmask tmp.mount
 sudo systemctl enable tmp.mount
  
+steps in ubuntu 18.04
+cp /usr/share/systemd/tmp.mount /etc/systemd/system
+systemctl enable tmp.mount
+
+df -h /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           490M     0  490M   0% /tmp
