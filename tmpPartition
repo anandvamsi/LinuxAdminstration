@@ -10,3 +10,9 @@ systemctl enable tmp.mount
 RHEL uses a default size of half the memory size for the in-memory /tmp file system
 
 df -h /tmp
+
+
+##Enable noexec to /tmp
+
+In case ubuntu
+mount -t tmpfs -o exec tmpfs /tmp
