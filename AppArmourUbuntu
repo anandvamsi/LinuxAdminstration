@@ -1,0 +1,6 @@
+Apparmor is a Mandatory Access Control (or MAC) system. It uses LSM kernel enhancements to restrict programs to certain resources. 
+AppArmor does this with profiles loaded into the kernel when the system starts. Apparmor has two types of profile modes, enforcement and complain. Profiles in enforcement mode enforce that profile's rules and report violation attempts in syslog or auditd. Profiles in complain mode don't enforce any profile rules, just log violation attempts.
+
+In Ubuntu Apparmor is installed by default. 
+It confines applications to profiles to determine what files and permissions that a program needs access to.
+Some applications will come with their own properties and more can be found in the apparmor-profiles package
