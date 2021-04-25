@@ -5,10 +5,14 @@ In Ubuntu Apparmor is installed by default.
 It confines applications to profiles to determine what files and permissions that a program needs access to.
 Some applications will come with their own properties and more can be found in the apparmor-profiles package
 
-
+##To get commands like aa-armor and aa-complian make sure you have below package
+>>apt-get install apparmor-utils
 
 ##To put a profile in complain mode you use 
 sudo aa-complain /path/to/bin, where /path/to/bin is the programs bin folder. For example, running: sudo aa-complain /usr/bin/firefox will put Firefox in complain mode.
 
 ##You use enforce mode
 aa-enforce /path/to/bin to enforce a programs profile
+
+
+To install
