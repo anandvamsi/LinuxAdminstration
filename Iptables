@@ -34,3 +34,9 @@ After every iptables command execution execute service iptables save so it will 
 To become iptables persistatn
 "/etc/sysconfig/iptables-config"
 IPTABLES_SAVE_ON_RESTART="yes"
+
+
+
+
+In ubuntu 20.04 to have iptables in persistant(even after reboot)
+iptables-save > /etc/iptables/rules.v4
