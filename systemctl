@@ -9,3 +9,23 @@ journalctl -u sshd --output=json-pretty  | head -n 30
 
 #To list the logs of a daemon using jounaltcl
 journalctl -u sshd
+
+Create a new script that will start at startup
+-------------------------------------------------
+contenet >> /etc/systemd/system/firewall.service.
+
+[Unit]
+Description=Firewall restart blocking solution.
+
+[Service]
+Type=simple
+ExecStart=/var/scripts/firewall.sh
+
+[Install]
+WantedBy=multi-user.target
+
+>> contenets of of firewall.service
+#!/bin/bash
+sudo ufw reload
+
+#systemctl enable firewall.service
