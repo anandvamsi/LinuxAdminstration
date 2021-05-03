@@ -1,0 +1,34 @@
+UFW
+uncompleted firewall 
+
+UFW
+
+Default rul1
+By default, UFW is set to deny all incoming connections and allow all outgoing connections
+
+#To add a rule
+ufw allow 2222
+
+# To allow port number
+ufw allow 6000:6007/tcp
+ufw allow 6000:6007/udp
+
+#To allow port from subnet
+ufw allow from 10.0.0.0/8 to any port 22
+
+#To delete the port number
+ufw delete allow 2222
+
+#To list in numbers
+ufw status numbered
+
+# To delete based on number 
+ufw delete 4
+
+
+#Resetting UFW will disable the firewall, and delete all active rules. This is useful when you want to revert all of your changes and start fresh.
+ufw reset
+
+#To make rule persistant even after reboot
+netfilter-persistent save
+
