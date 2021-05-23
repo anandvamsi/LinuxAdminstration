@@ -77,8 +77,8 @@ RAW data
 	shashi 90
 	venu 67
 sort -n -k2 names
-sort -t"|" -n -k2 names
 
 uniq
 	uniq filename will show the data in uniq fashion
 	uniq -d filename ::- will show the duplicates
+	uniq -c filename ::- will the occurances.
