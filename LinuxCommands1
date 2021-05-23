@@ -13,7 +13,7 @@ ls
   -t => modifed time first
   -r => resverse
   -h => size in human readable
-  -1 => one file per line
+  -1 => show data in single column
   -R => recursive files in the folder
 
 
