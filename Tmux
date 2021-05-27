@@ -1,0 +1,9 @@
+
+
+Tmux shortcuts
+
+#tmux to open terminal in tumx
+split vertically ctrl + b  "
+split horizontally  ctrl +v %
+
+swap terminals ctrl +b o
