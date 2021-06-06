@@ -31,6 +31,12 @@ for i in {0..10..2}
   do 
      echo "Welcome $i times"
  done
+ 
+#With positional paramters
+for i in $*
+do
+	echo i
+done
 
 
 
