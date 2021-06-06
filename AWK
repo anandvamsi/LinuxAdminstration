@@ -1,0 +1,51 @@
+
+#Print the entire file
+awk '{print}' /etc/fstab
+awk '{print $0}' /etc/fstab
+
+#Matching the patterns
+awk '/Technology/' samplefile
+
+#Print the file starting with UUID
+awk '/^UUID/' /etc/fstab
+
+#Print second field and third field 
+#Note:- By default space is the delimeter
+awk '{print $2" "$3}' favorite_food.txt
+
+#With Field seperator
+##print second and third lines which are seperated by "|"
+awk -F "|" '{ print $2 $3}' test_file
+
+#print the last field of the file
+awk '{print $NF}' test_file
+
+#Print the last and second last field
+awk '{print $NF $(NF-1)}' test_file
+
+#calculate the sum of first column
+awk '{sum+=$1}END {print sum}' samplefile
+
+#Print the second element starting with second element
+awk '/^UUID/ {print $2}' /etc/fstab
+
+#print the second element start with sa
+awk '$2 !~ /^sa/' favorite_food.txt
+
+#if conditions in AWS
+awk '$2 !~ /^sa/ && $1 < 5' favorite_food.txt 
+
+#print the first paramater greater than 100
+awk '$1 > 100' sample_file
+
+#print secon fielf if the first field greater than 400
+awk '$1 == "400" {print $2}' samplefile
+
+#Print the line numbers
+awk 'NR==1 {print}' samplefile
+
+#print the range of line numbers
+awk 'NR==1,NR==3 {print}' samplefile
+
+#print the END line
+awk 'END{print}' samplefile
