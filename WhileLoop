@@ -1,0 +1,49 @@
+
+#Syntax of whileloop
+while [ condition ]
+do
+   command1
+   command2
+   command3
+done
+
+syntax for while loop one linears
+while [ condition ]; do commands; done
+while control-command; do COMMANDS; done
+
+
+
+# Example 1:: Print the set up N numbers
+#!/bin/bash
+x=1
+while [ $x -le 5 ]
+do
+  echo "Welcome $x times"
+ let x++
+done
+
+##Example 2a:: Reading a file line by line
+cat <filename> | while read line
+do
+  echo $line
+done
+
+#Example 2b:: Reading a file by line by line 
+while read line
+do
+  echo $line
+done < filename 
+
+
+#Example 3:: Reading a file with strings in vars
+Note:- IFS is internal field seperator
+#!/bin/bash
+
+IFS="#"
+
+while read -r name marks
+do
+        echo "the name is $name and $marks"
+done < marks
+
+
