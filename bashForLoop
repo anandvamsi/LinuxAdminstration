@@ -1,0 +1,77 @@
+Syntax:-
+
+for condition
+do
+    echo $line
+done
+>>>>
+for OUTPUT in $(Linux-Or-Unix-Command-Here)
+do
+	command1 on $OUTPUT
+	command2 on $OUTPUT
+	commandN
+done
+>>>>>>>
+
+Example 1
+for i in 1 2 3 4 5
+do
+   echo "Welcome $i times"
+done
+
+#Using Range
+for i in 1{1..10}
+do
+   echo "Welcome $i times"
+done
+
+
+#Incrementing two numbers in each iteration
+for i in {0..10..2}
+  do 
+     echo "Welcome $i times"
+ done
+
+
+
+
+#Example 1 Reading word one by one
+#!/bin/bash
+words="va1 var2 var2 var4"
+for word in $words
+do
+        echo "$word"
+done
+
+
+#3 Expression Syntax
+#!/bin/bash
+for (( c=1; c<=5; c++ ))
+do  
+   echo "Welcome $c times"
+done
+
+#Use case:: Installing packages
+PKGS="php7-openssl-7.3.19-r0  php7-common-7.3.19-r0  php7-fpm-7.3.19-r0  php7-opcache-7.3.19-r0 php7-7.3.19-r0"
+for p in $PKGS
+do
+   echo "Installing $p package"
+   sudo apk add "$p"
+done
+
+
+
+##Using a array
+Names=('Mike' 'Tina' 'Hina' 'Haynes') # declare an array variable
+ #looping the array
+ for n in "${Names[@]}"; do
+   echo "Name: $n"
+ done
+
+
+
+#Infinite loops
+for (( ; ; ))
+do
+   echo "infinite loops [ hit CTRL+C to stop]"
+done
