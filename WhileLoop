@@ -47,3 +47,24 @@ do
 done < marks
 
 
+
+#Infinite loop
+Example 4a:
+while true
+do
+   echo "Hello world"
+done
+
+#Example 4b
+
+while [ - ]
+do
+   echo "Hello world"
+done
+
+#Example 4c
+while :
+do
+   echo "Hello world"
+done
+
