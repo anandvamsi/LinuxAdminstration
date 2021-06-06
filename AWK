@@ -3,8 +3,17 @@
 awk '{print}' /etc/fstab
 awk '{print $0}' /etc/fstab
 
+#TO print with line number
+awk '{print NR,$0}' employee.txt 
+
 #Matching the patterns
 awk '/Technology/' samplefile
+
+#Matching or condition
+awk '/tom|jerry|vivek/' /etc/passwd
+
+#TO print the linecount
+awk 'END { print NR }' geeksforgeeks.txt
 
 #Print the file starting with UUID
 awk '/^UUID/' /etc/fstab
@@ -49,3 +58,18 @@ awk 'NR==1,NR==3 {print}' samplefile
 
 #print the END line
 awk 'END{print}' samplefile
+
+#print the length of first field
+awk 'length($1) > 3' marks
+
+#Combination of sort,history,uniq,head and pipes
+history | awk '{print $2}' | sort | uniq -c | sort -rn | head
+
+#awk script to move to upper case
+>>myscript
+BEGIN {
+test="anand"
+print toupper(test)
+}
+
+awk -f myscript
