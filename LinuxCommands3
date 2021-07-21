@@ -46,7 +46,7 @@ zipinfo data.zip :- will show files inside the zip.
 
 grep
  		  grep -w "exact_pattern" <filname>
-    	  grep -c "count" <filename>
+    	  grep -c "count" <filename> // count of lines
     	  grep -l "list of strings" <files>
     	  grep -l "sting" <filenam>
 
