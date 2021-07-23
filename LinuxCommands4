@@ -14,7 +14,7 @@ Apache installation
 
 Disk utilization commands
  - df -h  For disk space
- Understand freespace,diskspace,partitions,mount points
+
  - du -sh  filename for the identifing the filename
 
 
