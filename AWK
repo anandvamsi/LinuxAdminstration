@@ -73,3 +73,8 @@ print toupper(test)
 }
 
 awk -f myscript
+
+
+#AWK to convert Decimal 
+echo 27.76 | awk '{$0=int($0)}1'
+27
