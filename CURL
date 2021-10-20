@@ -1,0 +1,8 @@
+
+Execute shell script with curl command 
+curl http://example.com/script.sh | bash 
+
+
+
+#Passing args with curl commands
+curl http://example.com/script.sh | bash -s -- arg1 arg2
