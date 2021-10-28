@@ -1,0 +1,7 @@
+#Creating MultiLine comments in bash
+
+<< comment 
+----bash lines----
+----bash lines-----
+----bash lines---
+comment 
