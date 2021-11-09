@@ -1,0 +1,34 @@
+
+Step1:-
+Download the packages
+https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
+
+
+    sudo yum install libaio
+    sudo rpm -ivh oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+    sudo rpm -ivh oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm
+
+step2:-
+Edit the user bashrc
+
+export ORACLE_HOME=/usr/lib/oracle/12.2/client64
+export LD_LIBRARY_PATH=${ORACLE_HOME}/lib
+export PATH=${ORACLE_HOME}/bin:$PATH
+ source .bashrc
+
+step3:-
+$ which sqlplus
+/usr/lib/oracle/12.2/client64/bin/sqlplus
+
+step4
+sqlplus username/password@host:port/service
+
+step5
+sqlplus settings
+set colsep '|'
+set linesize 167
+set pagesize 30
+set pagesize 1000
+
+Query::TO list the tables
+SELECT table_name, owner, tablespace_name FROM all_tables;
