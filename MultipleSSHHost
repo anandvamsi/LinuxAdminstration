@@ -1,0 +1,10 @@
+Lets image a case where you want ssh to ssh to multiple host , But its hard to remember IP address than Names
+ssh do have the feature to configure custom names in accordance with IP 
+
+
+#cat ~/.ssh/config
+Host steampipe
+  HostName 10.80.226.120
+  User vvamsi
+  
+  Here steampipe is friendly name, Simiarly you can add more hosts.
