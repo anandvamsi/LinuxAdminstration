@@ -3,8 +3,8 @@
 Tmux shortcuts
 
 #tmux to open terminal in tumx
-split vertically ctrl + b  "
-split horizontally  ctrl +b %
+split  horizondal ctrl + b  "
+split vertically  ctrl +b %
 swap terminals ctrl +b o
 
 #Create a new window
