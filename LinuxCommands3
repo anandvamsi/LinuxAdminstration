@@ -23,6 +23,14 @@ These command will show the contents inside the compressed file.
 zcat passwd
 zless passwd
 
+split 
+split command will split based on the lines/bytes  from the source files
+split -l30 accounts 
+- l line number
+split 30 lines from source file accounts.
+
+
+
 tar-
 	tar command :- Archive 
 	tar -cvf data.tar *
