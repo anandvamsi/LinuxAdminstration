@@ -1,0 +1,6 @@
+1. Login to slack website api.slack.com 
+2. Click on the "create APP" 
+    - Enter the APP name and select the channel 
+    
+3. click on the webhook incoming URL .
+    click add webhook
