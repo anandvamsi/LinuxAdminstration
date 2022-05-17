@@ -1,4 +1,4 @@
-
+#Notes
 #Print the entire file
 awk '{print}' /etc/fstab
 awk '{print $0}' /etc/fstab
