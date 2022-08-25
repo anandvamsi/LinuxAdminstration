@@ -115,7 +115,15 @@ esp- :wq quite and quit
 
 /search :- search of word
 %s/<txt to search>/<txt to replace>/g
-%v/./d :- To remove  the empty lines
+
+#if you want replace spefic line
+:5s/<txt to search>/<txt to replace>
+
+#if you want replace spefic line
+:5,10s/<txt to search>/<txt to replace>
+
+#To remove  the empty lines
+%v/./d 
 
 
 
