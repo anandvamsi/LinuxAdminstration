@@ -1,0 +1,2 @@
+Test-netConnection <destination IP> -port 22 // windows command
+mtr -n -T -c <destinato-IP> --report
