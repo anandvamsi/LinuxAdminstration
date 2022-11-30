@@ -79,6 +79,7 @@ RAW data
 sort -n -k2 names
 
 uniq
-	uniq filename will show the data in uniq fashion
-	uniq -d filename ::- will show the duplicates
-	uniq -c filename ::- will the occurances.
+        Before using uniq we need to sort the file
+	cat data | uniq -d ::- will list the duplicates
+	cat data | uniq -c ::- show the occurance
+	
