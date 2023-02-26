@@ -1,0 +1,6 @@
+
+#To list the boot logs
+journalctl -b
+
+#To list the kernel logs
+journalctl -k
