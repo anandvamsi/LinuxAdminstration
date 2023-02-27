@@ -1,0 +1,11 @@
+Method1:
+win + r
+   appwiz.cpl
+In the left navagation pane Click "Turn windows feature on and off"
+End of the screen searc for "Windows system for linux"
+
+Method2:
+wsl --install
+Install the machine 
+wsl --list --online
+wsl --install -d <distribution>
