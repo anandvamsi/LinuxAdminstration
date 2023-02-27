@@ -1,0 +1,19 @@
+
+
+Linux and Advantages
+Linux is very lightweight while Windows is fatty. In windows, a lot of programs run in the background and they eat up the RAM
+usecase::-In comparison, it was found that Linux was using 373 megabytes of RAM and Windows was using 1.3 gigabytes which is
+around 1000 megabytes more than Linux.
+
+#Security
+In terms of security, Linux is considered to be more secure than Windows as it is less susceptible to viruses and malware. Windows, 
+being the most popular OS in the world, is a more common target for cyber-attacks.
+
+#comptability
+Linux systems are known for consuming fewer system resources (RAM, disk space, etc.) when compared to Windows.  
+Hardware vendors already realized the popularity of Linux and started making Linux compliant hardware/drivers. When running the OS on older hardware, Windows is slower.
+
+
+#Linux GUI and CLI
+CLI::- It is comparatively more difficult to understand and use ; It is comparatively easier to understand and use
+CLI:- CLI consumes comparatively less memory. The GUI consumes comparatively more memory.
