@@ -1,0 +1,40 @@
+
+
+/bin : Essential command binaries that need to be available in single-user mode; for all users, e.g., cat, ls, cp
+       Commands used by all the users of the system are located here
+       
+/boot : Boot loader files, e.g., kernels, initrd
+/dev : Essential device files 
+                 /dev/null, /dev/sdaX
+                 /dev/usbmon0
+/etc : Host-specific system-wide configuration files
+Contains configuration files required by all programs.
+This also contains startup and shutdown shell scripts used to start/stop individual programs.
+Example: /etc/resolv.conf, /etc/logrotate.con
+
+/home: Users’ home directories, containing saved files, personal settings, etc.
+Home directories for all users to store their personal files.
+
+/lib :- Libraries essential for the binaries in /bin/ and /sbin/
+Library filenames are either ld* or lib*.so.*
+
+/media:- Mount points for removable media such as CD-ROMs
+ /mnt : Temporarily mounted filesystems
+ Temporary mount directory where sysadmins can mount filesystems
+ 
+/opt : Optional application software packages
+Contains add-on applications from individual vendors
+
+/sbin:- Essential system binaries, e.g., fsck, init, route
+The linux commands located under this directory are used typically by system administrator,
+for system maintenance purpose
+Example: iptables, reboot, fdisk, ifconfig, swapon
+
+/tmp:-  Temporary files. Often not preserved between system reboots, and may be severely size restricted.
+Directory that contains temporary files created by system and users.
+Files under this directory are deleted when system is rebooted.
+
+/proc:- Contains information about system process
+For example: /proc/{pid} directory contains information about the process with that 
+particular pid.
+
