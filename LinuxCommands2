@@ -8,6 +8,8 @@ Day 2
  #rm <filename>
  #rm -rf <fir>
  #rm -rf or rmdir
+#Remove all the files exepct one file
+rm -vf !("file2")
 
 
  Head:-
