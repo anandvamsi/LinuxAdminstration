@@ -10,6 +10,7 @@ Day 2
  #rm -rf or rmdir
 #Remove all the files exepct one file
 rm -vf !("file2")
+rm -vf !("file4"|"file3")  ::- Retain muliple files
 
 
  Head:-
