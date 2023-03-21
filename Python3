@@ -1,2 +1,6 @@
  ##Setting python3 default
  update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+ 
+ Install pip
+ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+ python3 get-pip.py
