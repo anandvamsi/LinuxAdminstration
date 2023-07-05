@@ -1,0 +1,38 @@
+UserAdministration
+
+lastlog,finger,id,w 
+
+
+
+When we run the ‘useradd‘ command in the Linux terminal, it performs the following major things:
+It edits /etc/passwd, /etc/shadow, /etc/group, and /etc/gshadow files for the newly created user accounts.
+Creates and populates a home directory for the new user.
+Sets permissions and ownerships to the home directory
+
+# useradd rajesh
+
+/etc/passwd
+Username: User login name used to login into the system. It should be between 1 to 32 characters long.
+Password: User password (or x character) stored in /etc/shadow file in an encrypted format.
+User ID (UID): Every user must have a User ID (UID) User Identification Number. By default, UID 0 is reserved for the root user and UIDs ranging from 1-99 are reserved for other predefined accounts. Further UIDs ranging from 100-999 are reserved for system accounts and groups.
+Group ID (GID): The primary Group ID (GID) Group Identification Number stored in the /etc/group file.
+User Info: This field is optional and allows you to define extra information about the user. For example, the user’s full name. This field is filled by the ‘finger’ command.
+Home Directory: The absolute location of the user’s home directory.
+Shell: The absolute location of a user’s shell i.e. /bin/bash.
+
+#Useradd with different home directory
+useradd -d /data/projects anuj
+
+check if the user exists or not
+id <username>
+
+#To get the user details:
+finger anand
+
+#To check the userlogins
+lastlog , lastlog -u anand
+last
+
+#To check the present logins
+w
+
