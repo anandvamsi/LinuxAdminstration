@@ -1,6 +1,9 @@
 UserAdministration
 
 lastlog,finger,id,w 
+User permissions (rwx)
+chmod,chown,chgrp
+
 
 
 
