@@ -5,3 +5,7 @@ dig XXXXXX.com ANY +noall +answer
 
 Method 2:- Via webconsole.
 dnsdumper.com
+
+
+
+dig @8.8.8.8 +noall +answer  NS hiXXXXhXXiXds.com
